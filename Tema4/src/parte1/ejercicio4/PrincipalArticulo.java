@@ -4,19 +4,22 @@ public class PrincipalArticulo {
 
 	public static void main(String[] args) {
 		// Creamos el objeto y inicializamos sus atributos
-		Articulo objeto = new Articulo();
-		objeto.nombre = "Aceitunas";
-		objeto.precio = 3.5;
-		objeto.cuantosQuedan = 10;
+		Articulo objeto;
+		String nombre = "Aceitunas";
+		double precio = 3.5;
+		double IVA = 21;
+		int cuantosQuedan = 10;
 
 		// Imprimimos los datos
-		System.out.println(objeto);
+		System.out.println(nombre + " - Precio: " + precio + "€ - IVA: " + IVA + "% - PVP: "
+				+ (precio + (precio * (IVA / 100))) + "€ - Quedan: " + cuantosQuedan);
 
 		// Modificamos los datos
-		objeto.precio = 4;
-		objeto.cuantosQuedan = 5;
+		precio = 4;
+		cuantosQuedan = 5;
 
 		// Imprimimos los datos
-		System.out.println(objeto);
+		System.out.println(nombre + " - Precio: " + precio + "€ - IVA: " + IVA + "% - PVP: "
+				+ (precio + (precio * (IVA / 100))) + "€ - Quedan: " + cuantosQuedan);
 	}
 }

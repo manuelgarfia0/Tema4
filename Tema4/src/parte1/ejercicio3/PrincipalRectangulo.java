@@ -4,17 +4,45 @@ public class PrincipalRectangulo {
 
 	public static void main(String[] args) {
 		// Declaramos los puntos para las coordenadas
-		Rectangulo p1 = new Rectangulo();
-		Rectangulo p2 = new Rectangulo();
+		Rectangulo p1;
+		Rectangulo p2;
+		int x1 = 0;
+		int y1 = 0;
+		int x2 = 0;
+		int y2 = 0;
 		// Inicializamos los puntos a los valores correspondientes
-		p1.x1 = 0;
-		p1.y1 = 0;
-		p1.x2 = 5;
-		p1.y2 = 5;
-		p2.x1 = 7;
-		p2.y1 = 9;
-		p2.x2 = 2;
-		p2.y2 = 3;
+		x1 = 0;
+
+		p1 = new Rectangulo(x1, y1, x2, y2);
+
+		y1 = 0;
+
+		p1 = new Rectangulo(x1, y1, x2, y2);
+
+		x2 = 5;
+
+		p1 = new Rectangulo(x1, y1, x2, y2);
+
+		y2 = 5;
+
+		p1 = new Rectangulo(x1, y1, x2, y2);
+
+		x1 = 7;
+
+		p2 = new Rectangulo(x1, y1, x2, y2);
+
+		y1 = 9;
+
+		p2 = new Rectangulo(x1, y1, x2, y2);
+
+		x2 = 2;
+
+		p2 = new Rectangulo(x1, y1, x2, y2);
+
+		y2 = 3;
+
+		p2 = new Rectangulo(x1, y1, x2, y2);
+
 		// Imprimimos las coordenadas
 		System.out.println("(" + p1.x1 + ", " + p1.y1 + ")");
 		System.out.println("(" + p1.x2 + ", " + p1.y2 + ")");

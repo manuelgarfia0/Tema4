@@ -9,35 +9,58 @@ public class PrincipalPersona {
 		Scanner scanner = new Scanner(System.in);
 
 		// Declaro dos personas
-		Persona p1 = new Persona();
-		Persona p2 = new Persona();
+		Persona p1;
+		Persona p2;
+
+		String DNI = "";
+		String nombre = "";
+		String apellidos = "";
+		int edad = 0;
 		// Preguntamos por los datos de ambas personas
 		System.out.println("Nombre de la primera persona: ");
-		p1.nombre = scanner.nextLine();
+		nombre = scanner.nextLine();
+
+		p1 = new Persona(DNI, nombre, apellidos, edad);
 
 		System.out.println("Apellidos de la primera persona: ");
-		p1.apellidos = scanner.nextLine();
+		apellidos = scanner.nextLine();
+
+		p1 = new Persona(DNI, nombre, apellidos, edad);
 
 		System.out.println("Edad de la primera persona: ");
-		p1.edad = scanner.nextInt();
+		edad = scanner.nextInt();
+
+		p1 = new Persona(DNI, nombre, apellidos, edad);
+
 		// Limpio escaner
 		scanner.nextLine();
 
 		System.out.println("DNI de la primera persona: ");
-		p1.DNI = scanner.nextLine();
+		DNI = scanner.nextLine();
+
+		p1 = new Persona(DNI, nombre, apellidos, edad);
 
 		System.out.println("Nombre de la segunda persona: ");
-		p2.nombre = scanner.nextLine();
+		nombre = scanner.nextLine();
+
+		p2 = new Persona(DNI, nombre, apellidos, edad);
 
 		System.out.println("Apellidos de la segunda persona: ");
-		p2.apellidos = scanner.nextLine();
+		apellidos = scanner.nextLine();
+
+		p2 = new Persona(DNI, nombre, apellidos, edad);
 
 		System.out.println("Edad de la segunda persona: ");
-		p2.edad = scanner.nextInt();
+		edad = scanner.nextInt();
+
+		p2 = new Persona(DNI, nombre, apellidos, edad);
+
 		// Limpio escaner
 		scanner.nextLine();
 		System.out.println("DNI de la segunda persona: ");
-		p2.DNI = scanner.nextLine();
+		DNI = scanner.nextLine();
+
+		p2 = new Persona(DNI, nombre, apellidos, edad);
 
 		// Si es menor de edad
 		if (p1.edad < 18) {
