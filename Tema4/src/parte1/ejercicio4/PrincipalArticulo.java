@@ -21,6 +21,8 @@ public class PrincipalArticulo {
 		objeto.setPrecio(4);
 		objeto.setCuantosQuedan(5);
 
+		objeto = new Articulo(nombre, precio, IVA, cuantosQuedan);
+
 		// Imprimimos los datos
 		System.out.println(objeto.getNombre() + " - Precio: " + objeto.getPrecio() + "€ - IVA: " + objeto.getIVA()
 				+ "% - PVP: " + (objeto.getPrecio() + (objeto.getPrecio() * (objeto.getIVA() / 100))) + "€ - Quedan: "

@@ -20,17 +20,11 @@ public class PrincipalPersona {
 		System.out.println("Nombre de la primera persona: ");
 		nombre = scanner.nextLine();
 
-		p1 = new Persona(DNI, nombre, apellidos, edad);
-
 		System.out.println("Apellidos de la primera persona: ");
-		apellidos = scanner.nextLine();
-
-		p1 = new Persona(DNI, nombre, apellidos, edad);
+		apellidos = scanner.nextLine();;
 
 		System.out.println("Edad de la primera persona: ");
 		edad = scanner.nextInt();
-
-		p1 = new Persona(DNI, nombre, apellidos, edad);
 
 		// Limpio escaner
 		scanner.nextLine();
@@ -43,22 +37,18 @@ public class PrincipalPersona {
 		System.out.println("Nombre de la segunda persona: ");
 		nombre = scanner.nextLine();
 
-		p2 = new Persona(DNI, nombre, apellidos, edad);
-
 		System.out.println("Apellidos de la segunda persona: ");
 		apellidos = scanner.nextLine();
 
-		p2 = new Persona(DNI, nombre, apellidos, edad);
-
 		System.out.println("Edad de la segunda persona: ");
 		edad = scanner.nextInt();
-
-		p2 = new Persona(DNI, nombre, apellidos, edad);
 
 		// Limpio escaner
 		scanner.nextLine();
 		System.out.println("DNI de la segunda persona: ");
 		DNI = scanner.nextLine();
+		
+		p2 = new Persona(DNI, nombre, apellidos, edad);
 
 		// Si es menor de edad
 		if (p1.getEdad() < 18) {
