@@ -10,16 +10,20 @@ public class PrincipalArticulo {
 		double IVA = 21;
 		int cuantosQuedan = 10;
 
+		objeto = new Articulo(nombre, precio, IVA, cuantosQuedan);
+
 		// Imprimimos los datos
-		System.out.println(nombre + " - Precio: " + precio + "€ - IVA: " + IVA + "% - PVP: "
-				+ (precio + (precio * (IVA / 100))) + "€ - Quedan: " + cuantosQuedan);
+		System.out.println(objeto.getNombre() + " - Precio: " + objeto.getPrecio() + "€ - IVA: " + objeto.getIVA()
+				+ "% - PVP: " + (objeto.getPrecio() + (objeto.getPrecio() * (objeto.getIVA() / 100))) + "€ - Quedan: "
+				+ objeto.getCuantosQuedan());
 
 		// Modificamos los datos
-		precio = 4;
-		cuantosQuedan = 5;
+		objeto.setPrecio(4);
+		objeto.setCuantosQuedan(5);
 
 		// Imprimimos los datos
-		System.out.println(nombre + " - Precio: " + precio + "€ - IVA: " + IVA + "% - PVP: "
-				+ (precio + (precio * (IVA / 100))) + "€ - Quedan: " + cuantosQuedan);
+		System.out.println(objeto.getNombre() + " - Precio: " + objeto.getPrecio() + "€ - IVA: " + objeto.getIVA()
+				+ "% - PVP: " + (objeto.getPrecio() + (objeto.getPrecio() * (objeto.getIVA() / 100))) + "€ - Quedan: "
+				+ objeto.getCuantosQuedan());
 	}
 }

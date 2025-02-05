@@ -60,19 +60,21 @@ public class PrincipalPersona {
 		System.out.println("DNI de la segunda persona: ");
 		DNI = scanner.nextLine();
 
-		p2 = new Persona(DNI, nombre, apellidos, edad);
-
 		// Si es menor de edad
-		if (p1.edad < 18) {
-			System.out.println(p1.nombre + " " + p1.apellidos + " con DNI " + p1.DNI + " no es mayor de edad");
+		if (p1.getEdad() < 18) {
+			System.out.println(
+					p1.getNombre() + " " + p1.getApellidos() + " con DNI " + p1.getDNI() + " no es mayor de edad");
 		} else {
-			System.out.println(p1.nombre + " " + p1.apellidos + " con DNI " + p1.DNI + " es mayor de edad");
+			System.out.println(
+					p1.getNombre() + " " + p1.getApellidos() + " con DNI " + p1.getDNI() + " es mayor de edad");
 		}
 
-		if (p2.edad < 18) {
-			System.out.println(p2.nombre + " " + p2.apellidos + " con DNI " + p2.DNI + " no es mayor de edad");
+		if (p2.getEdad() < 18) {
+			System.out.println(
+					p2.getNombre() + " " + p2.getApellidos() + " con DNI " + p2.getDNI() + " no es mayor de edad");
 		} else {
-			System.out.println(p2.nombre + " " + p2.apellidos + " con DNI " + p2.DNI + " es mayor de edad");
+			System.out.println(
+					p2.getNombre() + " " + p2.getApellidos() + " con DNI " + p2.getDNI() + " es mayor de edad");
 		}
 
 	}

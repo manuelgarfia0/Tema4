@@ -44,27 +44,27 @@ public class PrincipalRectangulo {
 		p2 = new Rectangulo(x1, y1, x2, y2);
 
 		// Imprimimos las coordenadas
-		System.out.println("(" + p1.x1 + ", " + p1.y1 + ")");
-		System.out.println("(" + p1.x2 + ", " + p1.y2 + ")");
-		System.out.println("(" + p2.x1 + ", " + p2.y1 + ")");
-		System.out.println("(" + p2.x2 + ", " + p2.y2 + ")");
+		System.out.println("(" + p1.getX1() + ", " + p1.getY1() + ")");
+		System.out.println("(" + p1.getX2() + ", " + p1.getY2() + ")");
+		System.out.println("(" + p2.getX1() + ", " + p2.getY1() + ")");
+		System.out.println("(" + p2.getX2() + ", " + p2.getY2() + ")");
 		// Imprimo el perímetro y área
 		imprimirRectangulo(p1);
 		imprimirRectangulo(p2);
 		// Modifico las coordenadas
-		p1.x1 = 3;
-		p1.y1 = 4;
-		p1.x2 = 1;
-		p1.y2 = 2;
-		p2.x1 = 8;
-		p2.y1 = 8;
-		p2.x2 = 3;
-		p2.y2 = 2;
+		p1.setX1(3);
+		p1.setY1(4);
+		p1.setX2(1);
+		p1.setY2(2);
+		p2.setX1(8);
+		p2.setY1(8);
+		p2.setX2(3);
+		p2.setY2(2);
 		// Imprimimos las coordenadas
-		System.out.println("(" + p1.x1 + ", " + p1.y1 + ")");
-		System.out.println("(" + p1.x2 + ", " + p1.y2 + ")");
-		System.out.println("(" + p2.x1 + ", " + p2.y1 + ")");
-		System.out.println("(" + p2.x2 + ", " + p2.y2 + ")");
+		System.out.println("(" + p1.getX1() + ", " + p1.getY1() + ")");
+		System.out.println("(" + p1.getX2() + ", " + p1.getY2() + ")");
+		System.out.println("(" + p2.getX1() + ", " + p2.getY1() + ")");
+		System.out.println("(" + p2.getX2() + ", " + p2.getY2() + ")");
 		// Imprimo el perímetro y área
 		imprimirRectangulo(p1);
 		imprimirRectangulo(p2);
