@@ -21,7 +21,8 @@ public class PrincipalPersona {
 		nombre = scanner.nextLine();
 
 		System.out.println("Apellidos de la primera persona: ");
-		apellidos = scanner.nextLine();;
+		apellidos = scanner.nextLine();
+		;
 
 		System.out.println("Edad de la primera persona: ");
 		edad = scanner.nextInt();
@@ -47,11 +48,11 @@ public class PrincipalPersona {
 		scanner.nextLine();
 		System.out.println("DNI de la segunda persona: ");
 		DNI = scanner.nextLine();
-		
+
 		p2 = new Persona(DNI, nombre, apellidos, edad);
 
 		// Si es menor de edad
-		if (p1.getEdad() < 18) {
+		if (p1.esMayorEdad() == false) {
 			System.out.println(
 					p1.getNombre() + " " + p1.getApellidos() + " con DNI " + p1.getDNI() + " no es mayor de edad");
 		} else {
@@ -59,7 +60,7 @@ public class PrincipalPersona {
 					p1.getNombre() + " " + p1.getApellidos() + " con DNI " + p1.getDNI() + " es mayor de edad");
 		}
 
-		if (p2.getEdad() < 18) {
+		if (p2.esMayorEdad() == false) {
 			System.out.println(
 					p2.getNombre() + " " + p2.getApellidos() + " con DNI " + p2.getDNI() + " no es mayor de edad");
 		} else {

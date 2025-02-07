@@ -102,7 +102,7 @@ public class Rectangulo {
 	 * @return perímetro del retángulo
 	 */
 	// Saco el perimetro
-	public int Perimetro() {
+	public int getPerimetro() {
 		return 2 * (Alto() + Ancho());
 	}
 
@@ -111,8 +111,51 @@ public class Rectangulo {
 	 * @return área del rectángulo
 	 */
 	// Saco el área
-	public int Area() {
+	public int getArea() {
 		return (Alto() * Ancho());
+	}
+
+	/**
+	 * 
+	 * @param x1
+	 * @param y1
+	 */
+	public void setX1Y1(int x1, int y1) {
+		this.x1 = x1;
+		this.y1 = y1;
+	}
+
+	/**
+	 * 
+	 * @param x2
+	 * @param y2
+	 */
+	public void setX2Y2(int x2, int y2) {
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+
+	/**
+	 * 
+	 * @param x1
+	 * @param y1
+	 * @param x2
+	 * @param y2
+	 */
+	public void setAll(int x1, int y1, int x2, int y2) {
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+
+	/**
+	 * 
+	 * @param r rectángulo
+	 * @return la informacion del rectangulo, área y perímetro
+	 */
+	public String toString(Rectangulo r) {
+		return "Área: " + getArea() + "Perímetro: " + getPerimetro();
 	}
 
 }

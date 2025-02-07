@@ -77,4 +77,60 @@ public class Articulo {
 		}
 	}
 
+	/**
+	 * 
+	 * @return PVP
+	 */
+	public double getPVP() {
+		double PVP;
+		PVP = getPrecio() + (getPrecio() * (getIVA() / 100));
+		return PVP;
+	}
+
+	/**
+	 * 
+	 * @param descuento de lo que esté definido en el método
+	 * @return PVP con el descuento implementado
+	 */
+	public double getPVPDescuento(int descuento) {
+		descuento = 1;
+		double PVPDescuento;
+		PVPDescuento = (getPrecio() + (getPrecio() * (getIVA() / 100))) - descuento;
+		return PVPDescuento;
+	}
+
+	/**
+	 * 
+	 * @return true si se han implementado los cambios, si no se queda en false
+	 */
+	public boolean vender() {
+		boolean res = false;
+		if (cuantosQuedan < 5) {
+			precio = 4.5;
+			res = true;
+		}
+		return res;
+	}
+
+	/**
+	 * 
+	 * @return true si se han implementado los cambios correspondientes, si no se
+	 *         queda en false
+	 */
+	public boolean almacenar() {
+		boolean res = false;
+		if (cuantosQuedan > 20) {
+			precio = 3;
+			res = true;
+		}
+		return res;
+	}
+
+	/**
+	 * @return datos del producto
+	 */
+	public String toString() {
+		return getNombre() + " - Precio: " + getPrecio() + "€ - IVA: " + getIVA() + "% - PVP: " + getPVP()
+				+ "€ - Quedan: " + getCuantosQuedan();
+	}
 }

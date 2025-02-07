@@ -32,14 +32,14 @@ public class PrincipalRectangulo {
 		imprimirRectangulo(p1);
 		imprimirRectangulo(p2);
 		// Modifico las coordenadas
-		p1.setX1(3);
-		p1.setY1(4);
-		p1.setX2(1);
-		p1.setY2(2);
-		p2.setX1(8);
-		p2.setY1(8);
-		p2.setX2(3);
-		p2.setY2(2);
+		p1.setX1Y1(3, 4);
+
+		p1.setX2Y2(1, 2);
+
+		p2.setX1Y1(8, 8);
+
+		p2.setX2Y2(3, 2);
+
 		// Imprimimos las coordenadas
 		System.out.println("(" + p1.getX1() + ", " + p1.getY1() + ")");
 		System.out.println("(" + p1.getX2() + ", " + p1.getY2() + ")");
@@ -52,9 +52,9 @@ public class PrincipalRectangulo {
 
 	public static void imprimirRectangulo(Rectangulo r) {
 		// Muestro el perímetro
-		System.out.println("Perímetro: " + r.Perimetro());
+		System.out.println("Perímetro: " + r.getPerimetro());
 		// Muestro el área
-		System.out.println("Área: " + r.Area());
+		System.out.println("Área: " + r.getArea());
 	}
 
 }

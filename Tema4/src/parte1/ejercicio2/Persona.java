@@ -83,4 +83,54 @@ public class Persona {
 			this.edad = edad;
 		}
 	}
+
+	/**
+	 * 
+	 * @param p persona a la que se refiere
+	 * @return true si es amyor de edad, false si no
+	 */
+	public boolean esMayorEdad() {
+		boolean res = false;
+		if (edad >= 18) {
+			res = true;
+		}
+		return res;
+	}
+
+	/**
+	 * 
+	 * @param p persona a la que se refiere
+	 * @return true si es mayor de 65 años, false si no
+	 */
+	public boolean esJubilado() {
+		boolean res = false;
+		if (edad >= 65) {
+			res = true;
+		}
+		return res;
+	}
+
+	/**
+	 * 
+	 * @param p persona a la que se refiere
+	 * @return la diferencia de edad entre las dos personas
+	 */
+	public int diferenciaEdad(Persona p) {
+		int diferencia;
+		if (this.edad > p.getEdad()) {
+			diferencia = this.edad - p.getEdad();
+		} else {
+			diferencia = p.getEdad() - this.edad;
+		}
+		return (diferencia);
+	}
+
+	/**
+	 * 
+	 * @param p persona a la que se refiere
+	 * @return cadena de texto con toda la información
+	 */
+	public String toString(Persona p) {
+		return "DNI: " + DNI + "Nombre: " + nombre + "Apellidos: " + apellidos + "Edad: " + edad;
+	}
 }

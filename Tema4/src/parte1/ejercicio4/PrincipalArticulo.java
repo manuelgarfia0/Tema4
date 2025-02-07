@@ -13,9 +13,7 @@ public class PrincipalArticulo {
 		objeto = new Articulo(nombre, precio, IVA, cuantosQuedan);
 
 		// Imprimimos los datos
-		System.out.println(objeto.getNombre() + " - Precio: " + objeto.getPrecio() + "€ - IVA: " + objeto.getIVA()
-				+ "% - PVP: " + (objeto.getPrecio() + (objeto.getPrecio() * (objeto.getIVA() / 100))) + "€ - Quedan: "
-				+ objeto.getCuantosQuedan());
+		System.out.println(objeto);
 
 		// Modificamos los datos
 		objeto.setPrecio(4);
@@ -24,8 +22,6 @@ public class PrincipalArticulo {
 		objeto = new Articulo(nombre, precio, IVA, cuantosQuedan);
 
 		// Imprimimos los datos
-		System.out.println(objeto.getNombre() + " - Precio: " + objeto.getPrecio() + "€ - IVA: " + objeto.getIVA()
-				+ "% - PVP: " + (objeto.getPrecio() + (objeto.getPrecio() * (objeto.getIVA() / 100))) + "€ - Quedan: "
-				+ objeto.getCuantosQuedan());
+		System.out.println(objeto);
 	}
 }
