@@ -1,10 +1,7 @@
 package parte2.ejercicio2;
 
 public class Libro {
-<<<<<<< HEAD
 
-}
-=======
 	private String titulo;
 	private String autor;
 	private int ejemplares;
@@ -185,4 +182,3 @@ public class Libro {
 		return res;
 	}
 }
->>>>>>> branch 'master' of https://github.com/manuelgarfia0/Tema4.git

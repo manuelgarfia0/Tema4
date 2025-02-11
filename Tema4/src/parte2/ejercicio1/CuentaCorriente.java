@@ -1,13 +1,17 @@
 package parte2.ejercicio1;
 
+import parte2.ejercicio2.Libro;
+
 public class CuentaCorriente {
 	// Variables
 	private String DNI;
 	private String nombre;
 	private double saldo;
-	private String nacionalidad;
-	public static final String nacionalidadEspañola = "Española";
-	public static final String nacionalidadExtranjera = "Extranjera";
+	private Nacionalidad nacionalidad;
+
+	enum Nacionalidad {
+		Español, Extranjero
+	}
 
 	/**
 	 * 
@@ -39,7 +43,7 @@ public class CuentaCorriente {
 	 * @param saldoInicial
 	 * @param nacionalidad
 	 */
-	public CuentaCorriente(String DNI, String nombre, double saldoInicial, String nacionalidad) {
+	public CuentaCorriente(String DNI, String nombre, double saldoInicial, Nacionalidad nacionalidad) {
 		this.DNI = DNI;
 		this.saldo = saldoInicial;
 		this.nombre = nombre;
@@ -59,7 +63,7 @@ public class CuentaCorriente {
 	 * 
 	 * @return nacionalidad
 	 */
-	public String getNacionalidad() {
+	public Nacionalidad getNacionalidad() {
 		return nacionalidad;
 	}
 
@@ -67,8 +71,8 @@ public class CuentaCorriente {
 	 * 
 	 * @param nacionalidad
 	 */
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
+	public Nacionalidad setNacionalidad(Nacionalidad nacionalidad) {
+		return this.nacionalidad = nacionalidad;
 	}
 
 	/**
@@ -136,29 +140,11 @@ public class CuentaCorriente {
 	 *         diferentes
 	 */
 	public boolean equals(Object obj) {
-		// 1. Si el objeto es la misma cuenta, son iguales.
-		if (this == obj) {
-			return true;
+		boolean res = false;
+		CuentaCorriente cuenta2 = (CuentaCorriente) obj;
+		if (DNI.equals(cuenta2.DNI) && nombre.equals(cuenta2.nombre)) {
+			res = true;
 		}
-
-		// 2. Si el objeto es nulo, no son iguales.
-		if (obj == null) {
-			return false;
-		}
-
-		// 3. Si el objeto no es una CuentaCorriente, no son iguales.
-		if (!(obj instanceof CuentaCorriente)) {
-			return false;
-		}
-
-		// 4. Convertimos el objeto a una CuentaCorriente.
-		CuentaCorriente otraCuenta = (CuentaCorriente) obj;
-
-		// 5. Comparamos el DNI y el nombre de las dos cuentas.
-		boolean mismoDNI = this.DNI.equals(otraCuenta.DNI);
-		boolean mismoNombre = this.nombre.equals(otraCuenta.nombre);
-
-		// 6. Si ambos son iguales, las cuentas son iguales.
-		return mismoDNI && mismoNombre;
+		return res;
 	}
 }

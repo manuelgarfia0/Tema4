@@ -1,10 +1,5 @@
 package parte2.ejercicio3;
 
-<<<<<<< HEAD
-public class Alumno {
-=======
-import parte2.ejercicio2.Libro;
-
 public class Alumno {
 
 	private String nombre;
@@ -75,6 +70,4 @@ public class Alumno {
 		}
 		return res;
 	}
->>>>>>> branch 'master' of https://github.com/manuelgarfia0/Tema4.git
-
 }

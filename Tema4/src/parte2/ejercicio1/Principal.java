@@ -5,11 +5,11 @@ public class Principal {
 	public static void main(String[] args) {
 		// Crear cuentas corrientes
 		CuentaCorriente cuenta1 = new CuentaCorriente("12345678A", "Alfredo Gómez", 1000.0,
-				CuentaCorriente.nacionalidadEspañola);
+				CuentaCorriente.Nacionalidad.Español);
 		CuentaCorriente cuenta2 = new CuentaCorriente("87654321B", "Juan Pérez", 500.0,
-				CuentaCorriente.nacionalidadEspañola);
+				CuentaCorriente.Nacionalidad.Español);
 		CuentaCorriente cuenta3 = new CuentaCorriente("12345678A", "Ana Gómez", 2000.0,
-				CuentaCorriente.nacionalidadExtranjera);
+				CuentaCorriente.Nacionalidad.Extranjero);
 
 		// Mostrar información de las cuentas
 		System.out.println(cuenta1);
