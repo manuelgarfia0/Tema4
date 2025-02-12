@@ -12,7 +12,7 @@ public class Alumno {
 	 * @param media  nota media del alumno
 	 */
 	public Alumno(String nombre, double media) {
-		if (!nombre.equals("") && !nombre.isBlank()) {
+		if (nombre != null && !nombre.isBlank()) {
 			this.nombre = nombre;
 		}
 		if (media >= 0 && media <= 10) {

@@ -1,7 +1,5 @@
 package parte2.ejercicio1;
 
-import parte2.ejercicio2.Libro;
-
 public class CuentaCorriente {
 	// Variables
 	private String DNI;
