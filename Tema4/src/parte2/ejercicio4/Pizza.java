@@ -3,20 +3,18 @@ package parte2.ejercicio4;
 public class Pizza {
 	// Variables
 	private int codigo;
+	
 	private Tamaño tamaño;
-
 	enum Tamaño {
 		Mediana, Familiar
 	}
-
+	
 	private Tipo tipo;
-
 	enum Tipo {
 		Margarita, CuatroQuesos, Funghi
 	}
-
+	
 	private Estado estado = Estado.Pedida;
-
 	enum Estado {
 		Pedida, Servida
 	}
@@ -34,7 +32,7 @@ public class Pizza {
 		switch (tamaño) {
 		case "Familiar":
 			this.tamaño = Tamaño.Familiar;
-		default:
+		case "Mediana":
 			this.tamaño = Tamaño.Mediana;
 		}
 		switch (tipo) {
@@ -42,7 +40,7 @@ public class Pizza {
 			this.tipo = Tipo.Margarita;
 		case "Cuatro quesos":
 			this.tipo = Tipo.CuatroQuesos;
-		default:
+		case "Funghi":
 			this.tipo = Tipo.Funghi;
 		}
 	}
