@@ -72,7 +72,6 @@ public class Ej1 {
 		String nombre;
 		System.out.println("Indica el nombre: ");
 		nombre = scanner.nextLine();
-		scanner.nextLine();
 		return nombre;
 	}
 
