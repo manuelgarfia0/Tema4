@@ -11,7 +11,7 @@ public class Ej1 {
 	public static void main(String[] args) {
 
 		// Variable para el menú
-		int ans;
+		int menu;
 
 		do {
 			// Menú
@@ -20,19 +20,19 @@ public class Ej1 {
 			System.out.println("3. Modificar");
 			System.out.println("4. Borrar");
 			System.out.println("5. Salir");
-			ans = scanner.nextInt();
+			menu = scanner.nextInt();
 			scanner.nextLine(); // Añadir una línea aquí para evitar problemas de entrada.
 
 			// Acción seleccionada
-			switch (ans) {
+			switch (menu) {
 			case 1 -> CRUD.imprimirLista();
 			case 2 -> nuevoAlumno();
 			case 3 -> modificar();
 			case 4 -> eliminar();
-			case 5 -> ans = 0;
+			case 5 -> menu = 0;
 			}
 
-		} while (ans != 0);
+		} while (menu != 0);
 	}
 
 	/**
