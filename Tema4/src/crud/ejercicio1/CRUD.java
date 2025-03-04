@@ -1,11 +1,10 @@
-package parte4.ejercicio1;
+package crud.ejercicio1;
 
 import java.util.ArrayList;
-
 import parte2.ejercicio3.Alumno;
 
 public class CRUD {
-	
+
 	static private ArrayList<Alumno> ListaAlumnos = new ArrayList<>();
 
 	/**
