@@ -100,30 +100,32 @@ public class Articulo {
 	}
 
 	/**
+	 * Vende una cantidad del artículo, reduciendo el stock disponible.
 	 * 
-	 * @return true si se han implementado los cambios, si no se queda en false
+	 * @param cantidad La cantidad a vender. Debe ser positiva y no mayor que el
+	 *                 stock disponible.
+	 * @return true si la venta fue exitosa, false si no había suficiente stock.
 	 */
-	public boolean vender() {
-		boolean res = false;
-		if (cuantosQuedan < 5) {
-			precio = 4.5;
-			res = true;
+	public boolean vender(int cantidad) {
+		boolean vendido = false;
+		if (cantidad > 0 && cantidad <= cuantosQuedan) {
+			cuantosQuedan -= cantidad;
+			vendido = true;
 		}
-		return res;
+		return vendido;
 	}
 
 	/**
+	 * Almacena una cantidad adicional del artículo, aumentando el stock disponible.
 	 * 
-	 * @return true si se han implementado los cambios correspondientes, si no se
-	 *         queda en false
+	 * @param cantidad La cantidad a almacenar. Debe ser positiva.
 	 */
-	public boolean almacenar() {
-		boolean res = false;
-		if (cuantosQuedan > 20) {
-			precio = 3;
-			res = true;
+	public void almacenar(int cantidad) {
+		if (cantidad > 0) {
+			cuantosQuedan += cantidad;
+		} else {
+			throw new IllegalArgumentException("La cantidad a almacenar debe ser positiva.");
 		}
-		return res;
 	}
 
 	/**

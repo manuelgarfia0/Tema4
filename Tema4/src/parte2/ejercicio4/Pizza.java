@@ -1,131 +1,134 @@
 package parte2.ejercicio4;
 
+/**
+ * Clase que representa una pizza con su código, tamaño, tipo y estado.
+ */
 public class Pizza {
-	// Variables
 	private int codigo;
-	
-	private Tamaño tamaño;
-	enum Tamaño {
-		Mediana, Familiar
-	}
-	
-	private Tipo tipo;
-	enum Tipo {
-		Margarita, CuatroQuesos, Funghi
-	}
-	
-	private Estado estado = Estado.Pedida;
-	enum Estado {
-		Pedida, Servida
+	private TamañosTipo tamaño;
+	private TiposTipo tipo;
+	private EstadosTipo estado;
+
+	/**
+	 * Enumeración que representa los diferentes tamaños de pizza.
+	 */
+	enum TamañosTipo {
+		MEDIANA, FAMILIAR
 	}
 
 	/**
+	 * Enumeración que representa los diferentes tipos de pizza.
+	 */
+	enum TiposTipo {
+		MARGARITA, CUATROQUESOS, FUNGHI
+	}
+
+	/**
+	 * Enumeración que representa los diferentes estados de una pizza.
+	 */
+	enum EstadosTipo {
+		PEDIDA, SERVIDA
+	}
+
+	/**
+	 * Constructor para crear una pizza con código, tamaño y tipo.
 	 * 
-	 * @param codigo codigo de la pizza
-	 * @param tamaño tamaño de la pizza
-	 * @param tipo   tipo de pizza
+	 * @param codigo El código de la pizza.
+	 * @param tamaño El tamaño de la pizza.
+	 * @param tipo   El tipo de la pizza.
+	 * @throws IllegalArgumentException si el código es negativo
 	 */
 	public Pizza(int codigo, String tamaño, String tipo) {
-		if (codigo > 0) {
-			this.codigo = codigo;
+		if (codigo < 0) {
+			throw new IllegalArgumentException("El código no puede ser negativo.");
 		}
-		switch (tamaño) {
-		case "Familiar":
-			this.tamaño = Tamaño.Familiar;
-		case "Mediana":
-			this.tamaño = Tamaño.Mediana;
+		this.codigo = codigo;
+
+		if (tamaño == null || tamaño.isEmpty()) {
+			throw new IllegalArgumentException("El tamaño no puede estar vacio.");
 		}
-		switch (tipo) {
-		case "Margarita":
-			this.tipo = Tipo.Margarita;
-		case "Cuatro quesos":
-			this.tipo = Tipo.CuatroQuesos;
-		case "Funghi":
-			this.tipo = Tipo.Funghi;
+		this.tamaño = TamañosTipo.valueOf(tamaño.toUpperCase());
+
+		if (tipo == null || tipo.isEmpty()) {
+			throw new IllegalArgumentException("El tipo no puede estar vacio.");
 		}
+		this.tipo = TiposTipo.valueOf(tamaño.toUpperCase());
+
+		this.estado = EstadosTipo.PEDIDA;
 	}
 
 	/**
+	 * Obtiene el código de la pizza.
 	 * 
-	 * @return codigo de la pizza
+	 * @return El código de la pizza.
 	 */
 	public int getCodigo() {
 		return codigo;
 	}
 
 	/**
+	 * Obtiene el tamaño de la pizza.
 	 * 
-	 * @param codigo codigo de la pizza
+	 * @return El tamaño de la pizza.
 	 */
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public String getTamaño() {
+		return String.valueOf(tamaño);
 	}
 
 	/**
+	 * Obtiene el tipo de la pizza.
 	 * 
-	 * @return tamaño de la pizza
+	 * @return El tipo de la pizza.
 	 */
-	public Tamaño getTamaño() {
-		return tamaño;
+	public String getTipo() {
+		return String.valueOf(tipo);
 	}
 
 	/**
+	 * Obtiene el estado de la pizza.
 	 * 
-	 * @param tamaño tamaño de la pizza
+	 * @return El estado de la pizza.
 	 */
-	public void setTamaño(Tamaño tamaño) {
-		this.tamaño = tamaño;
+	public String getEstado() {
+		return String.valueOf(estado);
 	}
 
 	/**
+	 * Establece el estado de la pizza.
 	 * 
-	 * @return tipo de la pizza
+	 * @param estado El nuevo estado de la pizza.
 	 */
-	public Tipo getTipo() {
-		return tipo;
+	public void setEstado(String estado) {
+		if (estado == null || estado.isEmpty()) {
+			throw new IllegalArgumentException("El tipo no puede estar vacio.");
+		}
+		this.estado = EstadosTipo.valueOf(estado.toUpperCase());
 	}
 
+	@Override
 	/**
+	 * Devuelve una representación en cadena de la pizza.
 	 * 
-	 * @param tipo tipo de la pizza
-	 */
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
-	}
-
-	/**
-	 * 
-	 * @return estado de la pizza
-	 */
-	public Estado getEstado() {
-		return estado;
-	}
-
-	/**
-	 * 
-	 * @param estado estado de la pizza
-	 */
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
-
-	/**
-	 * @return Información de la pizza
+	 * @return Una cadena con los datos de la pizza.
 	 */
 	public String toString() {
-		return codigo + ": " + tamaño + " - " + tipo + " - " + estado;
+		return codigo + " - " + tamaño + " - " + tipo + " - " + estado;
 	}
 
+	@Override
 	/**
-	 * @return true si las dos pizzas son iguales, false si son diferentes
+	 * Compara si el objeto dado es equivalente a esta pizza.
+	 * 
+	 * @param objeto El objeto a comparar.
+	 * @return true si los objetos son equivalentes, false en caso contrario.
 	 */
-	public boolean equals(Object obj) {
-		boolean res = false;
-		Pizza pizza2 = (Pizza) obj;
-		if (codigo == pizza2.codigo) {
-			res = true;
+	public boolean equals(Object objeto) {
+		boolean equivalentes = false;
+		if (objeto instanceof Pizza) {
+			Pizza p1 = (Pizza) objeto;
+			equivalentes = this.codigo == p1.codigo;
 		}
-		return res;
+		return equivalentes;
 	}
 
 }
