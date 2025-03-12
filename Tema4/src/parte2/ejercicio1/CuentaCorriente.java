@@ -2,7 +2,7 @@ package parte2.ejercicio1;
 
 public class CuentaCorriente {
 	// Variables
-	private String DNI;
+	private String dni;
 	private String nombre;
 	private double saldo;
 	private Nacionalidad nacionalidad;
@@ -17,8 +17,8 @@ public class CuentaCorriente {
 	 * @param saldoInicial
 	 */
 	// Constructores
-	public CuentaCorriente(String DNI, double saldoInicial) {
-		this.DNI = DNI;
+	public CuentaCorriente(String dni, double saldoInicial) {
+		this.dni = dni;
 		this.saldo = saldoInicial;
 	}
 
@@ -28,21 +28,21 @@ public class CuentaCorriente {
 	 * @param nombre
 	 * @param saldoInicial
 	 */
-	public CuentaCorriente(String DNI, String nombre, double saldoInicial) {
-		this.DNI = DNI;
+	public CuentaCorriente(String dni, String nombre, double saldoInicial) {
+		this.dni = dni;
 		this.saldo = saldoInicial;
 		this.nombre = nombre;
 	}
 
 	/**
 	 * 
-	 * @param DNI
+	 * @param dni
 	 * @param nombre
 	 * @param saldoInicial
 	 * @param nacionalidad
 	 */
-	public CuentaCorriente(String DNI, String nombre, double saldoInicial, Nacionalidad nacionalidad) {
-		this.DNI = DNI;
+	public CuentaCorriente(String dni, String nombre, double saldoInicial, Nacionalidad nacionalidad) {
+		this.dni = dni;
 		this.saldo = saldoInicial;
 		this.nombre = nombre;
 		this.nacionalidad = nacionalidad;
@@ -78,7 +78,7 @@ public class CuentaCorriente {
 	 * @return DNI
 	 */
 	public String getDNI() {
-		return DNI;
+		return dni;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class CuentaCorriente {
 	 */
 	// Método toString
 	public String toString() {
-		return "Cuenta (" + "DNI = " + DNI + ", " + "nombre = " + nombre + ", " + "saldo = " + saldo + ", "
+		return "Cuenta (" + "DNI = " + dni + ", " + "nombre = " + nombre + ", " + "saldo = " + saldo + ", "
 				+ "nacionalidad = " + nacionalidad + ")";
 	}
 
@@ -140,7 +140,7 @@ public class CuentaCorriente {
 	public boolean equals(Object obj) {
 		boolean res = false;
 		CuentaCorriente cuenta2 = (CuentaCorriente) obj;
-		if (DNI.equals(cuenta2.DNI) && nombre.equals(cuenta2.nombre)) {
+		if (dni.equals(cuenta2.dni) && nombre.equals(cuenta2.nombre)) {
 			res = true;
 		}
 		return res;
